@@ -77,3 +77,8 @@ console.log(result);
 
 
 ```
+
+
+### Pull Requests
+
+Pull requests are welcome

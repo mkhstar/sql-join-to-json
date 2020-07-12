@@ -1,11 +1,21 @@
 {
   "name": "sql-join-to-json",
   "version": "1.0.0",
-  "description": "",
+  "description": "Convert 1d sql query results to nested javascript object",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
-  "author": "",
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mkhstar/sql-join-to-json"
+  },
+  "keywords": [
+    "sql",
+    "mongodb",
+    "json",
+    "nesting"
+  ],
+  "author": "Kusi Musah Hussein",
+  "license": "MIT"
 }

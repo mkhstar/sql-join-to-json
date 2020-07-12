@@ -1,4 +1,11 @@
-function sqlJoinToJson(resultStructure, recordSet, prevKey = null) {
+/**
+ * 
+ * @param {object} resultStructure 
+ * @param {Array<object>} recordSet 
+ */
+
+function sqlJoinToJson(resultStructure, recordSet) {
+
   try {
     const initKeys = Object.keys(resultStructure);
     let firstValue;
@@ -6,7 +13,7 @@ function sqlJoinToJson(resultStructure, recordSet, prevKey = null) {
     return recordSet
       .map((record, index) =>
         recordSet.find(
-          compareNested(resultStructure, record, index, recordSet, prevKey)
+          compareNested(resultStructure, record, index, recordSet)
         )
       )
       .filter((record) => Boolean(record))
@@ -41,16 +48,8 @@ function sqlJoinToJson(resultStructure, recordSet, prevKey = null) {
   }
 }
 
-function compareNested(resultStructure, record, index, recordSet, prevKey) {
+function compareNested(resultStructure, record, index, recordSet) {
   const initKeys = Object.keys(resultStructure);
-
-  if (prevKey) {
-    return (rfind) =>
-      rfind[prevKey] === record[prevKey] &&
-      rfind[initKeys[0]] === record[initKeys[0]] &&
-      index ===
-        recordSet.findIndex((ri) => ri[initKeys[0]] === rfind[initKeys[0]]);
-  } else
     return (rfind) =>
       rfind[initKeys[0]] === record[initKeys[0]] &&
       index ===

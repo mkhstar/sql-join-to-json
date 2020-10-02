@@ -42,10 +42,21 @@ function sqlJoinToJson(resultStructure, recordSet) {
               ),
             };
           }, {}),
-      }));
+      }))
+        .filter(v => {
+          if (isObject(v)) {
+            return !Object.values(v).every(ov => ov === null);
+          } 
+          return v;
+        })
+      ;
   } catch (err) {
     throw err;
   }
+}
+
+function isObject(val) {
+  return !!val && val.constructor === Object;
 }
 
 function compareNested(resultStructure, record, index, recordSet) {

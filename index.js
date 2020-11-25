@@ -45,7 +45,7 @@ function sqlJoinToJson(resultStructure, recordSet) {
       }))
         .filter(v => {
           if (isObject(v)) {
-            return !Object.values(v).every(ov => ov === null);
+            return !Object.values(v).every(ov => ov === null || (Array.isArray(ov) && ov.length === 0));
           } 
           return v;
         })

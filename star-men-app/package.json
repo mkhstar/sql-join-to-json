@@ -1,0 +1,20 @@
+{
+  "name": "star-men-app",
+  "version": "1.0.0",
+  "description": "Express and Node application that provides an easy to follow structure",
+  "main": "index.js",
+  "scripts": {
+    "server": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "author": "",
+  "withoutMongoose": true,
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "star-men-engine": "github:mkhstar/star-men-engine"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
